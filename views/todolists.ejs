@@ -1,0 +1,126 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="/assets/style.css">
+        <title>
+            TO_DO_LIST
+        </title>
+
+        
+        
+    </head>
+    <html>
+        <body>
+        <h1 align="center">TODO APP</h1>
+        <hr/>
+
+        <form action="/create-task" method="POST" >
+
+            <table class="table" style="background:cyan">
+
+                <tr >
+                    <td style="width:60%" >Description
+                        <input type="text" style="width:300px" name="task" id="taskname" placeholder="Enter Task"  required>
+                    </td>
+                   
+                    
+                </tr>
+               
+
+                <tr>
+                    <td colspan="1">
+                    <label for="category">Category</label>
+
+                    <select name="category" required>
+
+                        <option>PERSONAL</option>
+                        <option>WORK</option>
+                        <option>SCHOOL</option>
+                        <option>CLEANING</option>
+                        <option>OTHER</option>
+
+                    </select></td>
+
+                    <td colspan="1"> <label for="date">Due Date</label>
+                    <input type="date" name="date" placeholder="dd-mm-yyyy" required></td>
+
+
+                </tr>
+
+
+
+
+            
+
+
+            </table>
+           <!-- <input type="sumbit"> -->
+
+           
+            <button type="submit" id="button1">
+                + Add Task
+            
+            </button>
+         
+
+    
+     
+        </form>
+
+
+
+
+
+        <form action="/delete-task" method="GET">
+
+            <div  align = "center"  ><button type="submit" id="button2">Delete Task</button> </div>
+            <hr>
+
+            <% for (let i of Todo_list) { %> 
+                <div class="task" style="margin-left: 6px"> 
+                     
+                         <input type="checkbox" name="<%= i._id %>" id="check-box">
+                         <p id="p1"><%= i.task %></p>
+                         <p id="p2"><%= i.date %></p>
+                         <p id="p3"><%= i.category %></p>
+                         <hr/>
+                     
+                 </div>
+                 <!-- <div class="delete-button">
+                     <a href="/delete-contact/?id=<%= i.id %>">
+                         delete
+                     </a>
+                 </div> -->
+             <% } %>
+           
+        
+    
+    
+    </form>
+
+
+
+
+
+
+
+
+
+
+        
+
+        <div >
+            
+
+                   
+                
+           
+        </div>
+
+        
+
+        
+
+        <!-- <script type="text/javascript" src="/js/home.js"></script> -->
+    </body>
+</html>
